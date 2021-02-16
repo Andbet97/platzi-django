@@ -4,6 +4,7 @@ from django.http import HttpResponse, JsonResponse
 
 # Utils
 from datetime import datetime
+import json
 
 
 def hello(request):
@@ -15,7 +16,13 @@ def hello(request):
 def hi(request):
     """Hi."""
     numbers = request.GET['numbers']
-    numbers = numbers.split(',')
-    numbers = [int(i) for i in numbers]
-    numbers.sort()
-    return JsonResponse({'sorted': numbers})
+    numbers = sorted([int(i) for i in numbers.split(',')])
+    data = {
+        'status': 'Ok',
+        'data': numbers
+    }
+    return HttpResponse(
+        json.dumps(data, indent=4), 
+        content_type='application/json'
+    )
+    # return JsonResponse(data)
