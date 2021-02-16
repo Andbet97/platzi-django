@@ -1,2 +1,6 @@
 # virtual env
 .platzi-django
+
+
+# __pycache__
+__pycache__
