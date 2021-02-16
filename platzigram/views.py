@@ -13,8 +13,8 @@ def hello(request):
     return HttpResponse('Oh hi! Current time is {}'.format(str(now)))
 
 
-def hi(request):
-    """Hi."""
+def sort_integers(request):
+    """Sort numbers."""
     numbers = request.GET['numbers']
     numbers = sorted([int(i) for i in numbers.split(',')])
     data = {
@@ -26,3 +26,12 @@ def hi(request):
         content_type='application/json'
     )
     # return JsonResponse(data)
+
+
+def say_hi(request, name, age):
+    """Say hi."""
+    if age < 12:
+        message = 'Sorry {}, you are not allowed here.'.format(name)
+    else:
+        message = 'Hello {}, Welcome!'.format(name)
+    return HttpResponse(message)
