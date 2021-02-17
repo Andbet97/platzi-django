@@ -126,6 +126,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Static dirs and finder
+# https://docs.djangoproject.com/en/2.0/ref/settings/#static-files
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
 # Media files
 # https://docs.djangoproject.com/en/2.0/ref/settings/#media-root
 # https://docs.djangoproject.com/en/2.0/ref/settings/#media-url
