@@ -24,7 +24,7 @@ class PostAdmin(admin.ModelAdmin):
     # Custom edit/create view
     fieldsets = (
         ('Profile', {
-            'fields': (('user'),)
+            'fields': (('user', 'profile'),)
             
         }),
         ('Posts', {
