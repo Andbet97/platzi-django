@@ -148,4 +148,4 @@ MEDIA_URL = '/media/'
 
 # Login url to login_requiered
 
-LOGIN_URL = 'login'
+LOGIN_URL = 'users/login'
