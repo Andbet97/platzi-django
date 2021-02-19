@@ -149,3 +149,7 @@ MEDIA_URL = '/media/'
 # Login url to login_requiered
 
 LOGIN_URL = 'users/login'
+
+# Login redirect for auth views
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = LOGIN_URL
